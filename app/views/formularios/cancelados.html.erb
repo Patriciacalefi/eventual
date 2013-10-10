@@ -1,0 +1,50 @@
+ <table width="100%"class="tabelas">
+   <tr>
+    <th colspan="2" align="left"><font  size=4 color="black"> <b>Inscrição de Professores Enventuais</b></font> - <font  size=3 color="black"> <b>Secretaria da Educação</b></font></th>
+    <th>    <%= link_to image_tag("/images/excluir.png", :size => "20x20"),  root_path, {:method => "get"}, :title => "Fechar"%></th>
+   </tr>
+ </table>
+<table class="tabelas">
+    <% form_tag cancelados_formularios_path do -%>
+    <tr>
+      <td align="right">
+        <%= label_tag :nome, "Nome" %>
+        <%= text_field_tag :nome %>
+        <%= submit_tag "Buscar" %>
+      </td>
+    </tr>
+  <% end -%>
+</table>
+<table class="tabelas" border="1">
+   <tr>
+     <td colspan="10"><font color ="red"><center><h3>INSCRIÇÕES CANCELADAS</h3></center></font></td>
+   </tr>
+   <tr>
+      <th width="5%">Inscrição</th>
+      <th>Nome</th>
+      <th>CPF</th>
+      <th>Opção</th>
+      <th>Disciplina</th>
+      <th>Documentação</th>
+      <th colspan="2">Administrar</th>
+    </tr>
+    <% for formulario in @formularios %>
+      <tr>
+        <td width="5%" ><center><%=h formulario.id %></center></td>
+        <td><%=h formulario.nome %></td>
+        <td witdh="5%"><%=h formulario.cpf %></td>
+        <td><%=h formulario.opcao %></td>
+        <td><%=h formulario.disciplina.disciplina %></td>
+        <td><%if formulario.documentacao_entregue == false %>
+              <center><font color="Red"><b>NÃO</b></font></center>
+            <%else%>
+              <center><b>OK</b></center>
+            <%end%>
+        </td>
+        <td><center><%= link_to image_tag("/images/exibir.gif", :size => "15x15"), formulario, :title => "Visualizar inscrição" %></center></td>
+        <td><center><%= link_to image_tag("/images/editar.png", :size => "15x15"), edit_formulario_path(formulario), :title => "Alterar inscrição" %></center></td>
+        
+      </tr>
+    <% end %>
+</table>
+

@@ -1,0 +1,46 @@
+<nav id="menu">
+    <ul>
+        <li><a href="#"><b>Arquivo</b></a>
+          <ul>
+            <li><b><%= link_to 'Inicio', root_path %></b></li>
+            <li><b><%= link_to 'Sair', logout_path %></b></li>
+           
+          </ul>
+        </li>        
+        <%if logged_in?%>
+           <% if current_user.has_role?("administrador") or current_user.has_role?("rh_adm")%>
+              <li><a href="#"><b>Administração</b></a>
+                <ul>
+                  <li><b><%= link_to "Usuario", signup_path %></b></li>
+                </ul>
+              </li>
+                  <%end%>
+                <%end%>
+        <li><b><%= link_to "Contato",sobre_path %></b></li>
+        <li><a href="#"><b>Inscrição</b></a><!-- nível 1 -->
+          <ul>
+            <li><a href="#"><b>Consultar</b></a><!-- nível 1 -->
+               <ul>
+                  <li><%= link_to "Cancelados", cancelados_formularios_path %></li>
+                  <li><%= link_to "Documentação", sem_documentos_formularios_path %></li>
+                  <li><%= link_to "CPF", busca_cpf_path %></li>
+                  <li><%= link_to "Disciplina", listagem_por_curso_formularios_path %></li>
+                  <li><%= link_to "Nome", formularios_path %></li>
+               </ul>
+            </li>
+            <li><b><%= link_to "Inscrever",new_formulario_path %></b></li>
+          </ul>
+        </li>
+        <li><a href="#"><b>Pontuação</b></a>
+          <ul>
+             <li><b><%= link_to "Classificacao", classificacao_formularios_path %></b></li>
+                <li><a href="#"><b>Consultar</b></a>
+                  <ul>
+                    <li><b><%= link_to "Disciplina", listar_nota_curso_formularios_path %></b></li>
+                    <li><b><%= link_to "Nome", listar_nota_formularios_path %></b></li>
+                  </ul>
+                </li>
+                <li><b><%= link_to "Pontuar", nota_formularios_path %></b></li>
+          </ul>
+        </li>
+</nav>

@@ -1,0 +1,97 @@
+ <table width="100%"class="tabelas">
+    <tr>
+    <th colspan="2" align="left"><font  size=4 color="black"> <b>Inscrição de Professores Enventuais</b></font> - <font  size=3 color="black"> <b>Secretaria da Educação</b></font></th>
+    <th>    <%= link_to image_tag("/images/excluir.png", :size => "20x20"),  root_path, {:method => "get"}, :title => "Fechar"%></th>
+  </tr>
+  </table >
+  <table class="tabelas">
+      <tr>
+
+      <% form_tag busca_cpf_path, :method => 'get' do -%>
+        <td align="right" >
+          <b>CPF:</b>
+          <%= text_field_tag :search_cpf, params[:search_cpf], :placeholder=>"SOMENTE OS Nº DO CPF" %>
+          <%= submit_tag "Buscar" %></td>
+      <% end -%>
+      </tr>
+      <tr>
+      <table class="tabelas">
+        <%if @search.present?%>
+          <tr><td colspan="4"><%= "Existe(m) #{@search.count} inscrição(ões) cadastrada(s) com este CPF" %></td></tr>
+          <tr><td colspan="4"><hr/></td></tr>
+          <%@search.each do |inscricao|%>
+          <tr><td colspan="4" class="alinhamento_central"><b>FICHA DE INSCRIÇÃO PARA PROFESSOR EVENTUA</b>L</td></tr>
+          <tr><td colspan="4" class="alinhamento_central"><b><%= "INSCRIÇÃO Nº  #{inscricao.id}     DATA: #{inscricao.created_at.strftime("%d/%m/%Y")}" %></b></td></tr>
+          <tr><td></td></tr>
+          <tr>
+            <td width ="10%"><b>NOME:</b></td>
+            <td colspan="3"><%=h inscricao.nome %></td>
+          </tr>
+          <tr>
+            <td class="alinhamento_justificado"><b>ENDEREÇO:</b></td>
+            <td><%=h inscricao.endereco %>
+            &nbsp&nbsp - &nbsp&nbsp<b>Nº</b> <%=h inscricao.numero %></td>
+          </tr>
+          <tr>
+            <td class="alinhamento_justificado"><b>BAIRRO:</b></td>
+            <td><%=h inscricao.bairro %></td>
+            <td class="alinhamento_justificado"><b>COMPLEMENTO:</b></td>
+            <td><%=h inscricao.complemento %></td>
+          </tr>
+          <tr>
+            <td class="alinhamento_justificado"><b>CIDADE:</b></td>
+            <td><%=h inscricao.cidade %></td>
+            <td class="alinhamento_justificado"><b>CEP:</b></td>
+            <td><%=h inscricao.cep %></td>
+          </tr>
+          <tr>
+            <td class="alinhamento_justificado"><b>NASCIMENTO:</b></td>
+            <td><%=h inscricao.dt_nasc.strftime("%d/%m/%Y") %></td>
+            <td class="alinhamento_justificado">ESTADO CIVIL:</td>
+            <td><%=h inscricao.estado_civil %>
+               &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              <b>Nº FILHOS:</b> <%=h inscricao.n_filhos %></td>
+          </tr>
+          <tr>
+            <td class="alinhamento_justificado" id="short"><b>CPF:</b></td>
+            <td><%= "#{inscricao.cpf}" %></td>
+            <td class="alinhamento_justificado" id="short"><b>RG:</b></td>
+            <td><%= "#{inscricao.rg}" %></td>
+          </tr>
+
+          <tr>
+            <td class="alinhamento_justificado"><b>PIS/PASEP:</b></td>
+            <td><%=h inscricao.pis %></td>
+            <td class="alinhamento_justificado"><b>E-MAIL:</b></td>
+            <td colspan="3"><%=h inscricao.email %></td>
+          </tr>
+         <tr>
+            <td class="alinhamento_justificado"><b>OPÇÃO:</b></td>
+            <td><%=h inscricao.opcao %></td>
+            <td class="alinhamento_justificado"><b>DISCIPLINA:</b></td>
+            <td><%=h inscricao.disciplina.disciplina %></td>
+          </tr>
+          <tr>
+            <td class="alinhamento_justificado"><b>HORARIO:</b></td>
+            <td ><%=h inscricao.horario %></td>
+            <td colspan="2">
+               <%if inscricao.status == 'Cancelado' %>
+                 <b>INSCRIÇÃO:</b> <font color="Red"><b>CANCELADA</b></font>
+               <%else%>
+                 <b>INSCRIÇÃO VÁLIDA</b>
+               <%end%>
+               <%if inscricao.documentacao_entregue == false %>
+                 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>DOCUMENTAÇÃO:</b> <font color="Red"><b>NÃO</b></font>
+               <%else%>
+                 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>DOCUMENTAÇÃO: OK</b>
+               <%end%>
+
+            </td>
+          </tr>
+          
+
+          <%end%>
+        <%end%>
+       </table>
+      </tr>
+    </table>

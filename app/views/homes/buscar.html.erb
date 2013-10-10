@@ -1,0 +1,27 @@
+ <table width="100%"class="tabelas">
+    <tr>
+    <th colspan="2" align="left"><font  size=4 color="black"> <b>Ficha de Inscrição de Professores Enventuais</b></font> - <font  size=3 color="black"> <b>Secretaria da Educação</b></font></th>
+    <th>    <%= link_to image_tag("/images/excluir.png", :size => "20x20"),  root_path, {:method => "get"}, :title => "Fechar"%></th>
+  </tr>
+  </table >
+<table width="100%"class="tabelas" >
+    <tr>
+      <td align="center">
+        <h2> CONSULTA INSCRIÇÃO</h2>
+      </td>
+    </tr>
+    <tr>
+      <% form_tag buscar_path, :method => 'get' do -%>
+        <td align="right">
+          Inscrição Nº:
+          <%= text_field_tag :search, params[:search], :placeholder=>"", :size =>2 %><%= submit_tag "Buscar" %></td>
+      <% end -%>
+    </tr>
+   </table>
+    <div id="private">
+      <table>
+      <% if @inscricao.present? %>
+        <%= render "inscricao" %>
+       <%end%>
+      </table>
+    </div>

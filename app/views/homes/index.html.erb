@@ -1,0 +1,28 @@
+
+<table  class="tabelas" width="100%" align="center">
+  <tr>
+     <th width="96%" align="left"><font  size=4 color="black"> <b>Sistema de Inscrição de Professores Enventuais</b></font> - <font  size=3 color="black"> <b>Secretaria da Educação</b></font></th>
+     <th>    <%= link_to image_tag("/images/excluir.png", :size => "20x20"),  root_path, {:method => "get"}, :title => "Fechar"%></th>
+  </tr>
+  <table>
+    <tr>
+
+      <td align="center"><%= link_to "FAZER INSCRIÇÃO", new_formulario_path,:id => "inscreva-se", :class => 'button' %></td>
+
+
+      <td align="center"><%= link_to "CONSULTAR INSCRIÇÂO", buscar_path, :class => "button"  %></td>
+    </tr>
+    <tr>
+      <td colspan="2"><font color="red"><b><u>INFORMAÇÕES IMPORTANTE</u></b><br/>
+           &nbsp&nbsp&nbsp&nbsp 1) Somente uma inscrição por número de CPF<br/>
+           &nbsp&nbsp&nbsp&nbsp 2) Somente uma opção por incrição<br/>
+           &nbsp&nbsp&nbsp&nbsp 3) É necessário ser graduado na área da opção da inscrição
+
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">Este site funciona apenas nos navegadores "MOZILLA FIREFOX" OU "GOOGLE CHROME". Os demais navegadores podem gerar falhas, não visualização de parte ou recursos da página.</td>
+    </tr>
+  </table>
+
+</table>

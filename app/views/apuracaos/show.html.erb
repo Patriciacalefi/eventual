@@ -1,0 +1,45 @@
+<h2>Apuração</h2>
+<br/>
+<br/>
+<fieldset >
+  <legend><b>Informações candidato</b></legend>
+  <p>
+    <rotulo>Número da inscrição:</rotulo>
+    <%=  "#{@apuracao.formulario_id }" %>
+  </p>
+  <p>
+    <rotulo>Nome:</rotulo>
+    <%=h "#{@apuracao.formulario.nome}" %>
+  </p>
+</fieldset>
+<fieldset>
+  <legend><b>Informações concurso</b></legend>
+  <p>
+    <rotulo>Avaliado(a) para:</rotulo>
+    <%=h @apuracao.curso %>
+  </p>
+
+  <p>
+    <rotulo>Pontos apresentados:</rotulo>
+    <%=h @apuracao.n_pontos %>
+  </p>
+
+  <p>
+    <rotulo>Nota prova:</rotulo>
+    <%=h @apuracao.nota_prova %>
+  </p>
+
+  <p>
+    <rotulo>Total:</rotulo>
+    <%=h @apuracao.total %>
+  </p>
+</fieldset>
+<p>
+  <b style="color: blue;">Status candidata: </b>
+  <%=h @apuracao.divulga_status%>
+</p>
+<br/>
+<br/>
+<%= link_to image_tag("/images/editar.png", :size => "15x15", :title => "Alterar apuração"),edit_apuracao_path(@apuracao) %>
+<%= link_to image_tag("/images/icon_add.png", :size => "15x15", :title => "Continuar apurando"),filtro_path %>
+<%= link_to image_tag("/images/listar.png", :size => "15x15", :title => "Listar apurações") ,apuracaos_path %>

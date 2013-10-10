@@ -1,0 +1,13 @@
+          <% form_remote_for(:home,:url => { :action => 'libera_privacy' }, :success => "$.fn.colorbox.close();$('.musica').hide();") do |f|%>
+            <%= error_messages_for 'contact' %>
+            <table>
+              <tr>
+                <th width="20%">Digite CPF:</th>
+                <td width="20%" align="center">
+                  <%= f.text_field :cpf,:size => "15" %>
+                </td>
+                <%= f.hidden_field(:id, :value => params[:search]) %>
+                <td><%= submit_tag 'Visualisar'  %></td>
+              </tr>
+            </table>
+          <%end%>

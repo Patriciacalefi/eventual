@@ -1,0 +1,2 @@
+module ApuracaosHelper
+end

@@ -1,0 +1,5 @@
+<p>  
+    <%= label :formulario_id, "Selecione o inscrito: "  %>
+    <%= collection_select :apuracao,:formulario_id, @inscritos, :id, :compose_nome, :include_blank => ' -- Selecione -- ' %>
+</p>
+

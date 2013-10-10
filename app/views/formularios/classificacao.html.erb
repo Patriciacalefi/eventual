@@ -1,0 +1,76 @@
+<br/>
+
+<table width="100%"class="tabelas">
+   <tr>
+    <th colspan="2" align="left"><font  size=4 color="black"> <b>Classificação de Professores Enventuais</b></font> - <font  size=3 color="black"> <b>Secretaria da Educação</b></font></th>
+   
+    <th><div  class="invisible_to_print">
+          <%= link_to image_tag("/images/excluir.png", :size => "20x20"),  root_path, {:method => "get"}, :title => "Fechar"%>
+        </div>
+    </th>
+   
+   </tr>
+</table>
+<table class="tabelas">
+    <% form_for @search do |f| %>
+     <tr>
+      <td align="right">
+        <div  class="invisible_to_print">
+            <b>Disciplina:</b>
+            <%= f.collection_select :disciplina_id,@disciplinas, :id, :disciplina, :include_blank => "Todas" %>
+            <%= f.submit "Buscar" %>
+        </div>
+      </td>
+    </tr>
+  <% end %>
+</table>
+  <table class="tabelas" border="1">
+    
+      <% if params[:search].present? %>
+        
+      <%else%>
+      <% curso = "GERAL" %>
+      <%end%>
+    <tr><td colspan="8"><h1 align = "center" id="teste">CLASSIFICAÇÃO <%= curso %></h1></td></tr>
+    <% if params[:search].present? %>
+    <tr><td colspan="5"><%= link_to image_tag("/images/salvar.png", :size => "15x15", :title => "Download classificação"), listagem_path(:disciplina_id => params[:search]) %>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <%= "Existe(m) #{@apuracao.count} inscrição(ões) válida(s) para esta disciplina" %>
+        </td>
+    </tr>
+   <%else%>
+    <tr><td colspan="5">
+      <div  class="invisible_to_print">
+        <input type="Button" Value="Imprimir" onclick="Imprimir()"></input>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <%= "Existe(m) #{@apuracao.count} inscrição(ões) classificada(s)" %>
+      </div>
+      </td>
+    </tr>
+   <%end%>
+    <tr>
+      <th width="5%">Classificação</th>
+      <th>Nome</th>
+      <th>CPF</th>
+      <th>Opção</th>
+      <th>Disciplina</th>
+    </tr>
+    <%$contador = 1%>
+    <%if @apuracao.present? %>
+      <% @apuracao.each do |apuracao|%>
+        <tr>
+            <td><center><%= $contador%>º</center></td>
+            <td><%=h apuracao.nome %></td>
+            <td><%=h apuracao.cpf %></td>
+            <td><%=h apuracao.opcao %></td>
+            <td><%=h apuracao.disciplina.disciplina%></td>
+        </tr>
+     
+           <% $contador= $contador+1 %>
+      <% end %>
+    <%end%>
+  </table>
+<br/>
+<br/>

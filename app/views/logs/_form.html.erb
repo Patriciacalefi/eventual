@@ -1,0 +1,16 @@
+<% form_for @log do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :user %><br />
+    <%= f.text_field :user %>
+  </p>
+  <p>
+    <%= f.label :formulario %><br />
+    <%= f.text_field :formulario %>
+  </p>
+  <p>
+    <%= f.label :acao %><br />
+    <%= f.text_field :acao %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  disciplina: MyString
+  opcao: MyString
+
+two:
+  disciplina: MyString
+  opcao: MyString

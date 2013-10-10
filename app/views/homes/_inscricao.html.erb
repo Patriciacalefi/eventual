@@ -1,0 +1,16 @@
+          <tr><th colspan="4" class="alinhamento_central">FICHA DE INSCRIÇÃO PARA PROFESSOR EVENTUAL</th></tr>
+          <tr><th colspan="4" class="alinhamento_central"><%= "INSCRIÇÃO Nº: #{@inscricao.id}     DATA: #{@inscricao.created_at.strftime("%d/%m/%Y")}" %></th></tr>
+          <tr>
+            <td>
+              
+            </td>
+          </tr>
+          <tr>
+            <th width ="10%"class="alinhamento_justificado">NOME:</th>
+            <td colspan="3"><%=h @inscricao.nome %></td>
+          </tr>
+          <tr>
+            <th class="alinhamento_justificado">NASCIMENTO:</th>
+            <td colspan="3"><%=h @inscricao.dt_nasc.strftime("%d/%m/%Y") %></td>
+          </tr>
+        <%= render "/shared/form_privacy" %>

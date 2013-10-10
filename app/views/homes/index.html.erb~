@@ -1,0 +1,13 @@
+<table>
+  <tr>
+    <td align="center">INSCRICOES ENCERRADAS</td>
+    <td align="center"><%= link_to "Consultar inscrição", buscar_path, :class => "button"  %></td>
+  </tr>
+  <tr>
+    <td colspan="2"><%= "Para visualizar/obter o edital deste concurso #{ link_to "Clique aqui", anexo_path}" %></td>
+  </tr>
+  <tr>
+    <td colspan="2">Este site funciona apenas nos navegadores "MOZILLA FIREFOX" OU "GOOGLE CHROME". Os demais navegadores podem gerar falhas ou nao visualizar a pagina.</td>
+  </tr>
+
+</table>

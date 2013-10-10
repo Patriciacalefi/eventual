@@ -1,0 +1,279 @@
+body, html, div, blockquote, img, label, p, h1, h2, h3, h4, h5, h6, pre, ul, ol,
+li, dl, dt, dd, form, a, fieldset, input, th, td
+{margin: 0; padding: 0; outline: none;}
+
+h2 {
+    text-align: center;
+}
+
+rotulo {
+    color: red;
+}
+
+body {
+    background-image: url("/images/principal_body.JPG");
+
+  font-family: Verdana, Helvetica, Arial;
+  font-size: 12px;
+  }
+
+a img {
+  border: none;
+  
+}
+
+a {
+  color: #0000FF;
+  text-decoration: none;
+}
+
+.clear {
+  clear: both;
+  height: 0;
+  overflow: hidden;
+}
+#cabecalho {
+  width: 75%;
+  margin: 0 auto;
+  background-color: #FFF;
+  padding: 40px 40px;
+  border: solid 1px black;
+  margin-top: 20px;
+  text-align: center;
+  background-image: url("/images/logo_default3.jpg");
+  background-repeat: inherit
+}
+#rodape {
+  width: 75%;
+  margin: 0 auto;
+
+  padding: 1px 40px;
+  border: solid 1px black;
+  margin-top: 10px;
+  text-align: center;
+
+      background-image:url("/images/fundo_rodape.jpg");
+
+     position:relative;
+    color:white;
+    text-align:center;
+}
+
+#login {
+    position: absolute;
+    top: 117px;
+    left: 710px;
+    color:#2E2E2E;
+    background: -moz-linear-gradient(center top, #DCDCDC, #696969);
+    background: -webkit-gradient(linear, left top, left bottom, from(#DCDCDC), to(#696969));
+    background:  -o-linear-gradient(top, #DCDCDC, #696969);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#DCDCDC', EndColorStr='#696969');
+}
+
+#login:hover { background: #fff; }
+
+#posicao{
+    position: absolute;
+    top: 108px;
+    left: 120px;
+    text-align: center;
+}
+#gerencia {
+  width: 75%;
+  margin: 0 auto;
+  background-image: url("/images/menu.jpg");
+  background-repeat:  repeat;
+  padding: 20px 40px;
+  border: solid 1px black;
+  margin-top: 10px;    
+}
+
+#container {
+  width: 75%;
+  margin: 0 auto;
+  background-color:#f0f0f0;
+  padding: 20px 40px;
+  border: solid 1px black;
+  margin-top: 20px;
+}
+
+#voltar{
+    text-align: center;
+}
+
+#flash_notice, #flash_error {
+  padding: 5px 8px;
+  margin: 10px 0;
+}
+
+#flash_notice {
+  background-color: #CFC;
+  border: solid 1px #6C6;
+}
+
+#flash_error {
+  background-color: #FCC;
+  border: solid 1px #C66;
+}
+
+.fieldWithErrors {
+  display: inline;
+}
+
+#errorExplanation {
+  width: 400px;
+  border: 2px solid #CF0000;
+  padding: 0px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: 0;
+  background-color: #c00;
+  color: #fff;
+}
+
+#errorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 8px;
+}
+
+#errorExplanation ul {
+  margin: 2px 24px;
+}
+
+#errorExplanation ul li {
+  font-size: 12px;
+  list-style: disc;
+}
+.teste th {
+  font-size: 10px;
+  padding: 4px 8px;
+  padding-bottom: 4px;
+  
+  border: solid 1px;
+  border-collapse: separate;
+  border-color:black;
+}
+table{
+border-bottom:1px #000 solid;
+}
+.teste td {
+    
+    border: solid 1px;
+    border-collapse: separate;
+    border-color:black;
+
+}
+.medium{
+    font-size: 16px;
+}
+.alinhamento_central{
+    text-align: center;
+}
+.alinhamento_justificado{
+    text-align: justify;
+}
+.alinhamento_direito{
+    text-align: right;
+}
+#short{
+    width: 15%;
+}
+
+
+table {
+  width:720px;
+  border:1px solid #000;
+  text-align: justify;
+}
+
+table thead th{
+  background-color:#ad2525;
+  padding:6px;
+  color:#fff;
+  text-align:center;
+  font-size:12px;
+}
+
+table thead th.header{
+  cursor:pointer;
+}
+
+table tbody td{
+  padding:6px;
+  text-align: justify;
+  color:#000;
+}
+
+table tbody tr.odd td{
+  background-color:#ffffcc;
+}
+
+table tbody tr.hover td{
+  background-color:#a9d0f5;
+}
+
+table tbody tr.selected td{
+  background-color:#a9f5a9!important;
+}
+.teste th {
+  font-size: 10px;
+  padding: 4px 8px;
+  padding-bottom: 4px;
+
+  border: solid 1px;
+  border-collapse: separate;
+  border-color:black;
+}
+
+.scroll2{
+    overflow: auto;
+    height: 450px;
+}
+.scroll{
+    overflow: auto;
+    width: 875px;
+    height: 450px;
+}
+
+.tabelas {
+  border-style: double;
+  border-collapse: separate;
+  border-color:black;
+  width:100%;
+}
+
+.tabelas1 {
+
+  border-style: double;
+  border-collapse: separate;
+  border-color:black;
+  width: 70%;
+
+}
+
+.tabelas th {
+  font-size: 12px;
+  color: black;
+  background-image:url("/images/fundolinha.jpg");
+  padding: 4px 8px;
+  padding-bottom: 4px;
+  text-align: left;
+}
+
+.tabelas1 th {
+  font-size: 12px;
+  color: black;
+  background-image:url("/images/fundolinha.jpg");
+  padding: 4px 8px;
+  padding-bottom: 4px;
+  text-align: left;
+}

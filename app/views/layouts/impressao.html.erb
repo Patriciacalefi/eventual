@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
+    <title><%= "SGI - SEDUC / PMA. Você está em: #{h(yield(:title) || 'Sem titulo')}" %></title>
+    <%= stylesheet_link_tag 'application'%>
+    <%= stylesheet_link_tag 'impressao', :media => "print" %>
+    <%= javascript_include_tag 'jquery-1.8.2','jquery.printElement.min','jrails','application.js' %>
+    <%= yield(:head) %>
+  </head>
+
+<body>
+  <style media="print">
+    .invisible_to_print {
+      display: none;
+    }
+  </style>
+  <div id="conteudo">
+    <%= yield  %>
+  </div>
+</body>
+</html>

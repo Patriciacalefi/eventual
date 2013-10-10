@@ -1,0 +1,58 @@
+<br/>
+<h2 align="center">   Sistema de Pontuação de Professores - Secretaria de Educação</h2>
+<br/>
+<div id="caixa" class="botao">
+<br/>
+    <table>
+        <% form_for @search do |f| %>
+          <tr>
+            <td align="right">
+              <%= f.label :curso_equals, "Disciplina" %>
+              <%= f.select :curso_equals, options_for_select(Formulario::DISCIPLINA.insert(0,"TODOS"))%>
+            </td>
+            <td align="center" colspan="2">
+              <%= f.submit "Buscar" %>
+            </td>
+          </tr>
+        <% end %>
+    </table>
+ </div>
+
+<br/>
+<br/>
+<h1 align = "center" id="teste">Listão Eventual </h1>
+<%if !(params[:search]).blank? %>
+  <% if params[:search][:curso_equals].present? %>
+    <% curso = params[:search][:curso_equals] %>
+  <%else%>
+  <% curso = "Geral" %>
+  <%end%>
+  <h3 align="center">Listão > <%= curso %></h3>
+  <%= link_to image_tag("/images/salvar.png", :size => "15x15", :title => "Download classificação"), listagem_path(:curso => params[:search][:curso_equals]) %>
+<%end%>
+<br/>
+<br/>
+<table>
+  <thead>
+    <tr>
+      <th>Classificação.</th>
+      <th>Nome</th>
+    </tr>
+  </thead>
+<%$contador = 1%>
+<%if @apuracao.present? %>
+  <% @apuracao.each do |apuracao|%>
+  <tbody>
+    <tr>
+        <td><%= $contador%></td>
+        <td><%=h apuracao.formulario.nome %></td>
+    </tr>
+  </tbody>
+       <% $contador= $contador+1 %>
+  <% end %>
+<%end%>
+</table>
+<br/>
+<br/>
+<br/>
+<br/>

@@ -1,0 +1,40 @@
+<%if $opcao == 'MAGISTÉRIO'%>
+  <%= collection_select  :formulario, :disciplina_id, @disciplinas1, :id, :disciplina, :include_blank => ' --- Selecione  ---'  %>
+<%else%>
+  <%if $opcao == 'PEDAGOGIA'%>
+    <%= collection_select  :formulario, :disciplina_id, @disciplinas2, :id, :disciplina, :include_blank => ' --- Selecione  ---'  %>
+  <%else%>
+    <%if $opcao == 'EDUCAÇÃO ESPECIAL'%>
+      <%= collection_select  :formulario, :disciplina_id, @disciplinas3, :id, :disciplina, :include_blank => ' --- Selecione  ---'  %>
+    <%else%>
+      <%if $opcao == 'ARTES'%>
+        <%= collection_select  :formulario, :disciplina_id, @disciplinas4, :id, :disciplina, :include_blank => ' --- Selecione  ---'  %>
+      <%else%>
+        <%if $opcao == 'ARTES'%>
+          <%= collection_select  :formulario, :disciplina_id, @disciplinas4, :id, :disciplina, :include_blank => ' --- Selecione  ---'  %>
+        <%else%>
+          <%if $opcao == 'EDUCAÇÃO FÍSICA'%>
+            <%= collection_select  :formulario, :disciplina_id, @disciplinas5, :id, :disciplina, :include_blank => ' --- Selecione  ---'  %>
+          <%else%>
+            <%if $opcao == 'HISTORIA'%>
+              <%= collection_select  :formulario, :disciplina_id, @disciplinas6, :id, :disciplina, :include_blank => ' --- Selecione  ---'  %>
+            <%else%>
+              <%if $opcao == 'GEOGRAFIA'%>
+                <%= collection_select  :formulario, :disciplina_id, @disciplinas7, :id, :disciplina, :include_blank => ' --- Selecione  ---'  %>
+              <%else%>
+                <%if $opcao == 'LETRAS'%>
+                  <%= collection_select  :formulario, :disciplina_id, @disciplinas8, :id, :disciplina, :include_blank => ' --- Selecione  ---'  %>
+                <%else%>
+
+                <%end%>
+              <%end%>
+            <%end%>
+          <%end%>
+        <%end%>
+      <%end%>
+    <%end%>
+  <%end%>
+<%end%>
+
+
+

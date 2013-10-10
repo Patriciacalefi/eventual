@@ -1,0 +1,21 @@
+<% title "Logs" %>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Formulario</th>
+    <th>Acao</th>
+  </tr>
+  <% for log in @logs %>
+    <tr>
+      <td><%=h log.user %></td>
+      <td><%=h log.formulario %></td>
+      <td><%=h log.acao %></td>
+      <td><%= link_to "Show", log %></td>
+      <td><%= link_to "Edit", edit_log_path(log) %></td>
+      <td><%= link_to "Destroy", log, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Log", new_log_path %></p>

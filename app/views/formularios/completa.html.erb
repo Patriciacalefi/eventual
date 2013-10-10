@@ -1,0 +1,126 @@
+<div  class="invisible_to_print">
+  <table width="100%"class="tabelas">
+    <tr>
+    <th align="left"><font  size=4 color="black"> <b>Ficha de Inscrição de Professores Enventuais</b></font> - <font  size=3 color="black"> <b>Secretaria da Educação</b></font></th>
+    <th><%= link_to image_tag("/images/excluir.png", :size => "20x20"),  root_path, {:method => "get"}, :title => "Fechar"%></th>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <center><input type="Button" Value="Imprimir" onclick="Imprimir()"></center></input>
+    </td>
+  </tr>
+  </table>
+</div>
+<table  class="tabelas">
+  <tr>
+    <td class="alinhamento_central" id="short">
+      <%= image_tag("/images/brasao.jpg", :size => "100x100") %>
+    </td>
+    <td colspan="5" class="alinhamento_central">
+      <h2>Prefeitura Municipal de Americana<br/>Estado de São Paulo<br/></h2>
+      <h3>Secretaria da Educação</h3>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="6">
+       <hr>
+    </td>
+  </tr>
+  <tr><td colspan="4" class="alinhamento_central"><h3>FICHA DE INSCRIÇÃO PARA PROFESSOR EVENTUAL</h3</td></tr>
+  <tr><td colspan="4"><center><b><%= "INSCRIÇÃO Nº  #{@formulario.id}     DATA: #{@formulario.created_at.strftime("%d/%m/%Y")}" %></b></center><br/><br/></td></tr>
+  <tr>
+    <td class="alinhamento_justificado"><b>NOME:</b></td>
+    <td colspan="3"><%=h @formulario.nome %></td>
+  </tr>
+  <tr>
+    <td class="alinhamento_justificado"><b>ENDEREÇO:</b></td>
+    <td colspan="3"><%=h @formulario.endereco %> &nbsp&nbsp - &nbsp&nbsp<b>Nº</b> <%=h @formulario.numero %></td>
+  </tr>
+  <tr>
+    <td class="alinhamento_justificado"><b>BAIRRO:</b></td>
+    <td><%=h @formulario.bairro %></td>
+    <td class="alinhamento_justificado"><b>COMPLEMENTO:</b></td>
+    <td><%=h @formulario.complemento %></td>
+  </tr>
+  <tr>
+    <td class="alinhamento_justificado"><b>CIDADE:</b></td>
+    <td><%=h @formulario.cidade %></td>
+    <td class="alinhamento_justificado"><b>CEP:</b></td>
+    <td><%=h @formulario.cep %></td>
+  </tr>
+  <tr>
+    <td class="alinhamento_justificado"><b>NASCIMENTO:</b></td>
+    <td><%=h @formulario.dt_nasc.strftime("%d/%m/%Y") %></td>
+    <td class="alinhamento_justificado"><b>ESTADO CIVIL:</b></td>
+    <td><%=h @formulario.estado_civil %>
+      &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <b>Nº FILHOS:</b> <%=h @formulario.n_filhos %></td>
+  </tr>
+  <tr>
+    <td class="alinhamento_justificado" id="short"><b>CPF:</b></td>
+    <td><%= "#{@formulario.cpf}" %></td>
+    <td class="alinhamento_justificado" id="short"><b>RG:</b></td>
+    <td><%= "#{@formulario.rg}" %></td>
+  </tr>
+  <tr>
+    <td class="alinhamento_justificado"><b>PIS/PASEP:</b></td>
+    <td><%=h @formulario.pis %></td>
+    <td class="alinhamento_justificado"><b>E-MAIL:</b></td>
+    <td><%=h @formulario.email %></td>
+  </tr>
+  <tr>
+    <td class="alinhamento_justificado" id="short"><b>TELEFONE: </b></td>
+    <td><%= "#{@formulario.telefone}" %></td>
+    <td class="alinhamento_justificado" id="short"><b>CELULAR:</b></td>
+    <td ><%= "#{@formulario.celular}" %></td>
+  </tr>
+  <tr>
+    
+  </tr>
+  <tr>
+    <td class="alinhamento_justificado"><b>OPÇÃO:</b></td>
+    <td><%=h @formulario.opcao%></td>
+    <td class="alinhamento_justificado"><b>DISCIPLINA:</b></td>
+    <td><%=h @formulario.disciplina.disciplina%></td>
+  </tr>
+  <tr>
+    <td class="alinhamento_justificado"><b>HORÁRIO:</b></td>
+    <td colspan="2"><%=h @formulario.horario %></td>
+  </tr>
+
+  <tr>
+    <td><b>PONTUAÇÃO:</b></td>
+    <td><b>PROVA:</b> <%=h @formulario.nota_prova %></td>
+    <td><b>TÍTULOS:</b> <%=h @formulario.n_pontos %></td>
+    <td><b>TOTAL:</b> <%=h @formulario.total %></td>
+  </tr>
+ <tr>
+   <td colspan="4">
+     <b>OBSERVAÇÃO:</b>
+        <% if @formulario.documentacao_entregue == true %>
+          &nbsp&nbsp&nbsp&nbsp DOCUMENTAÇÃO ENTREGUE EM ORDEM        <%end%>
+        <% if @formulario.ativo == true %>
+          &nbsp&nbsp INCRIÇÃO CANCELADA - INCRIÇÃO CANCELADA - INCRIÇÃO CANCELADA - INCRIÇÃO CANCELADA
+        <%end%>
+
+     <br/><br/><br/>     <br/><br/><br/>     <br/><br/><br/><br/><br/><br/>
+   </td>
+ </tr>
+ <tr>
+   <td colspan="3"></td>
+   <td colspan="1">Assinatura:     <br/></td>
+ </tr>
+  <tr>
+   <td colspan="4" align="left">
+     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    
+     Americana <%= Time.now.strftime("%d de %B de %Y") %></td>
+ </tr>
+  <% if logged_in? %>
+      <%= render "administrar" %>
+ <%end%>  
+
+</table>

@@ -1,0 +1,40 @@
+<table>
+    <% form_tag status_inscricao_path do |f| %>
+    <tr>
+      <td align="right">
+        <%= f.label :documentacao_entregue, "Disciplina Pretendida" %>
+        <%= f.select :documentacao_entregue,Formulario::STATUS, :size => 10, :include_blank => "TODOS" %>
+      </td>
+      <td align="center" colspan="2">
+        <%= f.submit "Buscar" %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<div id="imprimir" class="scroll2">
+<table>
+  <thead>
+    <tr>
+      <th width="5%">Inscrição Nº</th>
+      <th>CPF</th>
+      <th>Nome</th>
+      <th>Disciplina Escolhida</th>
+      <th colspan="3">Administrar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% for formulario in @formularios %>
+      <tr>
+        <td width="5%"><%=h formulario.id %></td>
+        <td><%=h formulario.cpf %></td>
+        <td><%=h formulario.nome %></td>
+        <td><%=h formulario.disciplina %></td>
+        <td><%= link_to image_tag("/images/exibir.gif", :size => "15x15"), formulario, :title => "Visualizar inscrição" %></td>
+        <td><%= link_to image_tag("/images/editar.png", :size => "15x15"), edit_formulario_path(formulario), :title => "Alterar inscrição" %></td>
+        <td><%= link_to image_tag("/images/excluir.png", :size => "15x15"), formulario, :confirm => 'Tem certeza?', :method => :delete, :title => "Excluir inscrição" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>

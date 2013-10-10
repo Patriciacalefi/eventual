@@ -1,0 +1,42 @@
+ <table width="100%"class="tabelas">
+    <tr>
+    <th colspan="2" align="left"><font  size=4 color="black"> <b>Pontuar Professores Enventuais</b></font> - <font  size=3 color="black"> <b>Secretaria da Educação</b></font></th>
+    <th><center><%= link_to image_tag("/images/excluir.png", :size => "20x20"),  root_path, {:method => "get"}, :title => "Fechar"%></center></th>
+  </tr>
+  </table >
+
+<table class="tabelas">
+    <% form_for @search do |f| %>
+    <tr>
+      <td align="right">
+        <%= f.label :nome_like, "Nome:" %>
+        <%= f.text_field :nome_like, :size => 20 %>
+
+        <%= f.submit "Buscar" %>
+    </td>
+    </tr>
+  <% end %>
+</table>
+  <% if params[:search].blank?%>
+  <%else%>
+  <table class="tabelas" border="1">
+    <tr>
+      <th width="10%"><center>Inscrição</center></th>
+      <th>Nome</th>
+      <th>CPF</th>
+      <th>Disciplina</th>
+      <th width="5%">Pontuação</th>
+    </tr>
+    <% for formulario in @formularios %>
+      <tr>
+        <td><center><%=h formulario.id %></center></td>
+        <td><%=h formulario.nome %></td>
+        <td><%=h formulario.cpf %></td>
+        <td><%=h formulario.disciplina.disciplina %></td>
+        <td><center><%= link_to image_tag("/images/editar.png", :size => "15x15"), {:action => "apuracao_nota", :id =>formulario}, :method => "get", :title => "Validar Relatório"%></td>
+
+        
+      </tr>
+    <% end %>
+</table>
+    <% end %>

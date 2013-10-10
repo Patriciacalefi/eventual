@@ -1,0 +1,42 @@
+ <table align ="center" class="tabelas1" >
+   <tr>
+    <th colspan="2" align="left"><center><font  size=4 color="black"> <b>Sistema de Inscrição de Professores Enventuais</b></font><font  size=3 color="black"></center>
+      <center><b>Secretaria da Educação</b></center></font></th>
+    <th>    <%= link_to image_tag("/images/excluir.png", :size => "20x20"),  root_path, {:method => "get"}, :title => "Fechar"%></th>
+   </tr>
+ </table>
+
+ <% form_for :user, :url => users_path do |f| %>
+  <%= error_messages_for :user %>
+  <table align ="center" class="tabelas1">
+  <tr>
+    <td colspan="2">
+      <center><h1>Novo usuário</h1></center></font>
+    </td>
+  </tr>
+  <tr>
+    <td><b>Usuário:</b></td>
+    <td><%= f.text_field :login, :size => 30%></td>
+  </tr>
+  <tr>
+    <td><b>Nome:</b></td>
+    <td><%= f.text_field :name, :size => 30%></td>
+  </tr>
+  <tr>
+    <td><b>E_mail:</b></td>
+    <td><%= f.text_field :email, :size => 30%></td>
+  </tr>
+  <tr>
+    <td><b>Senha:</b></td>
+    <td><%= f.text_field :password, :size => 30%></td>
+  </tr>
+  <tr>
+    <td><b>Senha:</b></td>
+    <td><%= f.text_field :password_confirmation, :size => 30%></td>
+  </tr>
+  <tr>
+    <td colspan="2"><%= submit_tag 'Salvar' %></td>
+  </tr>
+
+ <% end %>
+</table>

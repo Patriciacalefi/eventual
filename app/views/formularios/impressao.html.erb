@@ -1,0 +1,23 @@
+<div class="scroll" id="imprimir">
+  <table>
+    <thead>
+      <tr>
+        <th >Nº</th>
+        <th >CPF</th>
+        <th >Nome</th>
+        <th >Disciplina Escolhida</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for formulario in @formularios %>
+        <tr>
+          <td ><%=h formulario.id %></td>
+          <td><%=h formulario.cpf %></td>
+          <td><%=h formulario.nome %></td>
+          <td><%=h formulario.disciplina %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<a href='#' onclick="PrintDiv('imprimir')">Imprimir</a>

@@ -1,0 +1,31 @@
+
+ <table width="100%"class="tabelas">
+    <tr>
+    <th colspan="2" align="left"><font  size=4 color="black"> <b>Ficha de Inscrição de Professores Enventuais</b></font> - <font  size=3 color="black"> <b>Secretaria da Educação</b></font></th>
+    <th>    <%= link_to image_tag("/images/excluir.png", :size => "20x20"),  root_path, {:method => "get"}, :title => "Fechar"%></th>
+  </tr>
+  </table >
+  <% form_for @formulario do |f| %>
+    <%= f.error_messages %>
+  <table class="tabelas" >
+    <tr><td colspan="4" class="alinhamento_central"><br/><h3>FICHA DE INSCRIÇÃO PARA PROFESSOR EVENTUAL</h3</td></tr>
+   <tr><td colspan="4"><center><b><%= "INSCRIÇÃO Nº  #{@formulario.id}     DATA: #{@formulario.created_at.strftime("%d/%m/%Y")}" %></b></center><br/></td></tr>
+
+   <tr>
+      <td><b><%= f.label :nome,"Nome: " %></b><%=h @formulario.nome %></td>
+      <td><b><%= f.label :cpf, "CPF: " %></b><%=h @formulario.cpf %></td>
+      <td><b><%= f.label :rg,"RG: " %></b><%=h @formulario.rg %></td>
+    </tr>
+    <tr>
+      <td><b><%= f.label :opcao, "Opção: " %></b><%=h @formulario.opcao %></td>
+      <td><b><%= f.label :disciplina,"Disciplina: " %></b><%=h @formulario.disciplina.disciplina %></td>
+      <td><b><%= f.label :horario,"Horário: " %></b><%=h @formulario.horario %></td>
+    </tr>
+    <tr>
+      <td><b>Pontuação Prova: </b><%= f.text_field :nota_prova, :size=>'5' %></td>
+      <td><b>Pontuação Titulos: </b><%= f.text_field :n_pontos, :size=>'5'%></td>
+   </tr>
+    <tr><td colspan="2"><%= f.submit "Salvar" %></td></tr>
+  <% end %>
+</table>
+

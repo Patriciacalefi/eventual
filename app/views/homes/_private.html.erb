@@ -1,0 +1,72 @@
+<table class="tabelas">
+          <tr><td colspan="4" class="alinhamento_central"><b>FICHA DE INSCRIÇÃO PARA PROFESSOR EVENTUAL</b></td></tr>
+          <tr><td colspan="4" class="alinhamento_central"><b><%= "INSCRIÇÃO Nº  #{@inscricao.id}     DATA: #{@inscricao.created_at.strftime("%d/%m/%Y")}" %></b></td></tr>
+          <tr><td></td></tr>
+          <tr>
+            <td width ="10%"class="alinhamento_justificado"><b>NOME:</b></td>
+            <td colspan="3"><%=h @inscricao.nome %></td>
+          </tr>
+          <tr>
+            <td class="alinhamento_justificado"><b>ENDEREÇO:</b></td>
+            <td><%=h @inscricao.endereco %>
+            &nbsp&nbsp - &nbsp&nbsp<b>Nº</b> <%=h @inscricao.numero %></td>
+          </tr>
+          <tr>
+            <td class="alinhamento_justificado"><b>BAIRRO:</b></td>
+            <td><%=h @inscricao.bairro %></td>
+            <td class="alinhamento_justificado"><b>COMPLEMENTO:</b></td>
+            <td><%=h @inscricao.complemento %></td>
+          </tr>
+          <tr>
+            <td class="alinhamento_justificado"><b>CIDADE:</b></td>
+            <td><%=h @inscricao.cidade %></td>
+            <td class="alinhamento_justificado"><b>CEP:</b></td>
+            <td><%=h @inscricao.cep %></td>
+          </tr>
+          <tr>
+            <td class="alinhamento_justificado"><b>NASCIMENTO:</b></td>
+            <td><%=h @inscricao.dt_nasc.strftime("%d/%m/%Y") %></td>
+            <td class="alinhamento_justificado"><b>ESTADO CIVIL:</b></td>
+            <td><%=h @inscricao.estado_civil %>
+               &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              <b>Nº FILHOS:</b> <%=h @inscricao.n_filhos %></td>
+          </tr>
+          <tr>
+            <td class="alinhamento_justificado" id="short"><b>CPF:</b></td>
+            <td><%= "#{@inscricao.cpf}" %></td>
+            <td class="alinhamento_justificado" id="short"><b>RG:</b></td>
+            <td><%= "#{@inscricao.rg}" %></td>
+          </tr>
+
+          <tr>
+            <td class="alinhamento_justificado"><b>PIS/PASEP:</b></td>
+            <td><%=h @inscricao.pis %></td>
+            <td class="alinhamento_justificado"><b>E-MAIL:</b></td>
+            <td colspan="3"><%=h @inscricao.email %></td>
+          </tr>
+         <tr>
+            <td class="alinhamento_justificado"><b>OPÇÃO:</b></td>
+            <td><%=h @inscricao.opcao %></td>
+            <td class="alinhamento_justificado"><b>DISCIPLINA:</b></td>
+            <td><%=h @inscricao.disciplina.disciplina %></td>
+          </tr>
+            <% if @inscricao.total == 0.000 %>
+              <tr>
+                <td class="alinhamento_justificado"><b>HORARIO:</b></td>
+               <td colspan="3"><%=h @inscricao.horario %></td>
+              </tr>
+            <%else%>
+              <tr>
+                <td class="alinhamento_justificado"><b>HORARIO:</b></td>
+                <td><%=h @inscricao.horario %></td>
+              </tr>
+              <tr>
+                <td><b>PONTUAÇÃO:</b></td>
+                <td><b>PROVA:</b> <%=h @inscricao.nota_prova %></td>
+                <td><b>TÍTULOS:</b> <%=h @inscricao.n_pontos %></td>
+                <td><b>TOTAL:</b> <%=h @inscricao.total %></td>
+              </tr>
+            <%end%>
+  
+</table>
+

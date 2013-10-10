@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title><%= h(yield(:title) || "Sistema IPE - Inscrição Professores Eventuais") %></title>
+    <%= stylesheet_link_tag 'colorbox',"ui-darkness/jquery-ui-1.9.0.custom",'application','modal','menu' %>
+    <%= stylesheet_link_tag 'impressao', :media => "print" %>
+    <%= javascript_include_tag 'jquery-1.8.2','jquery.printElement.min',"jquery-ui-1.8.22.custom.min","jquery.colorbox","colorbox.js",'jrails','application.js' %>
+  
+  <%= yield(:head) %>
+    <style type="text/css"  media="print">
+      .invisible_to_print {
+        display: none;
+      }
+    </style>
+  </head>
+  <div id="cabecalho"></div>
+  <div id="gerencia" class="invisible_to_print">
+    <% if logged_in? %>            
+      <%= render "shared/menu" %>
+    <%else%>
+        <%= link_to "Login / Sign In", '#login-box', :class => "login-window", :id => "login" %>
+        <%= link_to "Contato", sobre_path, :class => "button" , :id => "posicao"%>
+    <%end%>
+  </div>
+  <body>
+    <div id="container">
+      <%- flash.each do |name, msg| -%>
+        <%= content_tag :div, msg, :id => "flash_#{name}" %>
+      <%- end -%>
+
+      <%- if show_title? -%>
+        <h1><%=h yield(:title) %></h1>
+      <%- end -%>
+
+      <%= yield %>
+    </div>
+  </body>
+  <div id="rodape">@ Todos direitos reservados</div>
+  <div class="invisible_to_print">
+    <div id="login-box" class="login-popup">
+            <a href="#" class="close"><img src="/images/close_pop.png" class="btn_close" title="Close Window" alt="Close" /></a>
+            <% form_tag session_path do -%>
+              <p><%= label_tag 'user',"Usuario" %><br />
+              <%= text_field_tag 'user', @login,:placeholder=>"Username" %></p>
+              <p><%= label_tag 'password', "Senha" %><br/>
+              <%= password_field_tag 'password', nil,:placeholder=>"Password" %></p>
+              <p><%= submit_tag 'Entrar' %></p>
+            <% end -%>
+    </div>
+  </div>
+</html>

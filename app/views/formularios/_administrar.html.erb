@@ -1,0 +1,33 @@
+<% if @formulario.apuracao.present? %>
+  <tr>
+    <td colspan="4"><br/>Nº DE PONTOS <b><u><%= @formulario.apuracao.n_pontos %></u></b></td>
+  </tr>
+  <tr>
+    <td colspan="4"><br/>NOTA DA PROVA <b><u><%= @formulario.apuracao.nota_prova %></u></b></td>
+  </tr>
+  <tr>
+    <th class="alinhamento_justificado" colspan="2"><br/>TOTAL: <b><u><%= @formulario.apuracao.total %></u></b></th>
+    <th class="alinhamento_justificado" colspan="2"><br/>CLASSIFICAÇÃO: ________________________________________________________</th>
+  </tr>
+  <tr>
+    <th class="alinhamento_justificado" colspan="4"><%= "Americana, ____/____/#{Time.now.strftime("%Y")}" %></th>
+  </tr>
+  <tr>
+    <td colspan="4" align="center"><br/>________________________________________________<br/>Assinatura do candidato</td>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b class="medium"><%= "INSCRIÇÃO Nº <u>#{@formulario.id}</u> PARA PROFESSOR EVENTUAL <u>#{Time.now.strftime("%B/%Y")}</u>" %></b>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2"><br/><%= "DATA ____/____/#{Time.now.strftime("%Y")}" %></td>
+    <td colspan="2"><br/><%= "RECEBIDO POR: ____________________________________" %></td>
+  </tr>
+
+  <tr class="invisible_to_print">
+    <td colspan="4"><%= link_to image_tag("/images/editar.png", :size => "35x35"), edit_formulario_path(@formulario), :title => "Alterar Inscrição" %>
+    <%= link_to image_tag("/images/excluir.png", :size => "35x35"), @formulario, :confirm => 'Realmente apagar?', :method => :delete, :title => "Excluir Inscrição" %>
+    <%= link_to image_tag("/images/listar.png", :size => "35x35"), formularios_path, :title => "Listar Inscrição" %></td>
+  </tr>
+<%end%>

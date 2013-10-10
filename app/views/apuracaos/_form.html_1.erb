@@ -1,0 +1,42 @@
+<% unless params[:formulario].present? %>
+<table>
+    <tr>
+      <% form_remote_tag :url => filtro_path do -%>
+        <td><%= label_tag :sel_curso, "Selecione a disciplina:" %></td>
+        <td><%= select_tag(:sel_curso, options_for_select(Formulario::DISCIPLINA))  %></td>
+        <td><%= submit_tag "Filtrar"%></td>
+      <%end -%>
+    </tr>
+  </table>
+<br/>
+<%end%>
+  <% form_for(@apuracao) do |f| %>
+    <%= f.error_messages %>
+    <div id="filtrado">
+      <p>
+        <%= f.label :formulario_id, "Inscrito: "  %>
+        <%unless params[:formulario].present?%>
+          <%= f.collection_select :formulario_id, @inscritos, :id, :compose_nome, :include_blank => ' -- Selecione -- ' %>
+        <%else%>
+          <%= @apuracao.formulario.compose_nome %>
+          <%= f.hidden_field(:formulario_id, :value => params[:formulario]) %>
+        <%end%>
+      </p>
+    </div>
+    <p>
+      <%= f.label :n_pontos, "Pontuação apresentada: " %>
+      <%= f.text_field :n_pontos %>
+    </p>
+    <p>
+      <%= f.label :nota_prova, "Nota Obtida: " %>
+      <%= f.text_field :nota_prova %>
+    </p>
+    <p>
+      <%= f.label :aprovada, "Candidata aprovada" %>
+      <%= f.check_box(:aprovada) %>
+    </p>
+
+    <p>
+      <%= f.submit 'Salvar' %>
+    </p>
+  <% end %>

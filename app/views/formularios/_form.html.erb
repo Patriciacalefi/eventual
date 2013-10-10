@@ -1,0 +1,110 @@
+
+ <table width="100%"class="tabelas">
+   <tr>
+    <th colspan="2" align="left"><font  size=4 color="black"> <b>Ficha de Inscrição de Professores Enventuais</b></font> - <font  size=3 color="black"> <b>Secretaria da Educação</b></font></th>
+    <th>    <%= link_to image_tag("/images/excluir.png", :size => "20x20"),  root_path, {:method => "get"}, :title => "Fechar"%></th>
+   </tr>
+ </table>
+  <% form_for @formulario do |f| %>
+    <%= f.error_messages %>
+  <table class="tabelas" >
+  <tr>
+    <td colspan="3">
+      <center> <font color ="Red" size ="3"> * É OBRIGATÓRIO O PREENCHIMENTO DE TODOS OS CAMPOS </center></font>
+    </td>
+  </tr>
+
+  <tr>
+      <td><font color ="Red" size ="3"><b>*</b></font><%= f.label :nome,"Nome: " %><br/>
+          <%= f.text_field :nome, :size => 30%>
+      </td>
+      <td>
+        <font color ="Red" size ="3">*</font><%= f.label :dt_nasc, "Data de Nascimento:"%><br/>
+        <%= f.date_select(:dt_nasc, :order => [:day, :month, :year], :start_year => (Date.today.year), :end_year => (Date.today.year - 70)) %>
+       </td>
+    </tr>
+    <tr>
+      <td><font color ="Red" size ="3">*</font><%= f.label :endereco, "Endereço: " %><br/>
+          <%= f.text_field :endereco, :size => 30 %></td>
+      <td><font color ="Red" size ="3">*</font><%= f.label :numero, "Nº: " %>
+           &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+          <font color ="Red" size ="3">*</font><%= f.label :cep,"Cep:" %><br/>
+          <%= f.text_field :numero, :size => 1 %>
+          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+          <%= f.text_field :cep, :size => 5 %></td>
+    </tr>
+    <tr>
+      <td><font color ="Red" size ="3">*</font><%= f.label :bairro, "Bairro:"%><br/>
+          <%= f.text_field :bairro, :size => 30%></td>
+      <td><font color ="Red" size ="3">*</font><%= f.label :cidade,"Cidade:" %><br/>
+           <%= f.text_field :cidade,:size => 30 %>
+      </td>
+    </tr>
+    <tr>
+      <td><%= f.label :complemento,"Complemento:" %><br/>
+          <%= f.text_field :complemento, :size => 30 %>
+      <td><font color ="Red" size ="3">*</font><%= f.label :email,"Email" %><br/>
+          <%= f.text_field :email, :size => 30%>
+      </td>
+      </td>
+    </tr>
+    <tr>
+      <td><font color ="Red" size ="3">*</font><%= f.label :telefone, "Fone:" %>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <font color ="Red" size ="3">*</font><%= f.label :celular, "Celular:" %><br/>
+        <%= f.text_field :telefone, :size => 10 %>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <%= f.text_field :celular, :size => 10 %>
+      </td>
+      <td><font color ="Red" size ="3">*</font><%= f.label :cpf, "CPF: " %>
+         &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+         <font color ="Red" size ="3">*</font><%= f.label :rg,"RG: " %><br/>
+         <%= f.text_field :cpf, :size => 10 %>
+         &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+         <%= f.text_field :rg, :size => 10 %>
+      </td>
+    </tr>
+    <tr>
+
+      <td><font color ="Red" size ="3">*</font><%= f.label :pis, "PIS/PASEP: " %><br/>
+        <%= f.text_field :pis, :size => 10 %>
+      </td>
+      <td><font color ="Red" size ="3">*</font><%= f.label :n_filhos, "Nº Filhos:" %>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <font color ="Red" size ="3">*</font><%= f.label :estado_civil, "Estado Civil:" %><br/>
+        <%= f.text_field :n_filhos, :size => 10 %>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <%= f.select :estado_civil,Formulario::ESTADO_CIVIL %>
+
+      </td>
+    </tr>
+
+    <tr>
+      <td><font color ="Red" size ="3">*</font><%= f.label :opcao, "Opção:" %><b> (É necessário ser graduado na opção)</b><br/>
+          <%= f.select :opcao,Formulario::OPCAO %>
+            <%= observe_field 'formulario_opcao',
+                    :with => :formulario_opcao,
+                    :url => { :action => 'seleciona' },
+                    :update => "selecao" %>
+      </td>
+      <td><font color ="Red" size ="3">*</font><%= f.label :disciplina,"Disciplina Pretendida:" %><br/>
+         <div id="selecao"></div>
+      </td>
+    </tr>
+    <tr>
+      <td><font color ="Red" size ="3">*</font><%= f.label :horario,"Horário:" %><br/>
+        <%= f.radio_button(:horario, "MANHÃ",:checked => "checked")%>MANHA
+        <%= f.radio_button(:horario, "TARDE")%>TARDE
+        <%= f.radio_button(:horario, "INTEGRAL")%>INTEGRAL
+                <%= f.radio_button(:horario, "EJA(NOTURNO)")%>EJA (NOTURNO)
+      </td>
+       <td>
+        <font color ="Red" size ="3">*</font><%= f.label :exerce_funcao, "Exerce outra atividade na Prefeitura de Americana:" %><br />
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <%= f.radio_button(:exerce_funcao, false,:checked => "checked")%>Não
+        <%= f.radio_button(:exerce_funcao, true)%>Sim
+      </td>
+    </tr>
+    <tr><td colspan="2"><%= f.submit "Salvar" %></td></tr>
+  <% end %>
+</table>

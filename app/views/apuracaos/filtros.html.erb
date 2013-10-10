@@ -1,0 +1,12 @@
+  <table>
+    <tr>
+      <% form_tag inscrito_path do -%>
+        <td><%= label_tag :inscrito, "Insira o numero de inscrição:" %></td>
+        <td><%= text_field_tag :inscrito  %></td>
+        <td><%= submit_tag "Procurar"%></td>
+      <%end -%>
+    </tr>
+    <tr>
+      <td><div id="erro"></div></td>
+    </tr>
+  </table>

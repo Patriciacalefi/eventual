@@ -1,0 +1,92 @@
+          <tr><th colspan="4" class="alinhamento_central">FICHA DE INSCRIÇÃO PARA EVENTUAL</th></tr>
+          <tr><th colspan="4" class="alinhamento_central"><%= "INSCRIÇÃO Nº: #{@inscricao.id}     DATA: #{@inscricao.created_at.strftime("%d/%m/%Y")}" %></th></tr>
+          <tr>
+            <td>
+              
+            </td>
+          </tr>
+          <tr>
+            <th class="alinhamento_justificado">NOME:</th>
+            <td colspan="3"><%=h @inscricao.nome %></td>
+          </tr>
+          <tr>
+            <th class="alinhamento_justificado">NASCIMENTO:</th>
+            <td colspan="3"><%=h @inscricao.dt_nasc.strftime("%d/%m/%Y") %></td>
+          </tr>
+          <tr>
+            <th class="alinhamento_justificado">ESTADO CIVIL:</th>
+            <td><%=h @inscricao.estado_civil %></td>
+            <th class="alinhamento_justificado">Nº DE FILHOS:</th>
+            <td><%=h @inscricao.n_filhos %></td>
+          </tr>
+          <tr>
+            <th class="alinhamento_justificado">ENDEREÇO:</th>
+            <td><%=h @inscricao.endereco %></td>
+            <th class="alinhamento_justificado">Nº:</th>
+            <td><%=h @inscricao.numero %></td>
+          </tr>
+          <tr>
+            <th class="alinhamento_justificado">COMPLEMENTO:</th>
+            <td><%=h @inscricao.complemento %></td>
+            <th class="alinhamento_justificado">BAIRRO:</th>
+            <td><%=h @inscricao.bairro %></td>
+          </tr>
+          <tr>
+            <th class="alinhamento_justificado">CIDADE:</th>
+            <td><%=h @inscricao.cidade %></td>
+            <th class="alinhamento_justificado">CEP:</th>
+            <td><%=h @inscricao.cep %></td>
+          </tr>
+          <tr>
+            <th class="alinhamento_justificado">PIS/PASEP</th>
+            <td colspan="3"><%=h @inscricao.pis %></td>
+          </tr>
+          <tr>
+            <th class="alinhamento_justificado" id="short">CPF:</th>
+            <td><%= "#{@inscricao.cpf}" %></td>
+            <th class="alinhamento_justificado" id="short">RG:</th>
+            <td><%= "#{@inscricao.rg}" %></td>
+          </tr>
+          <tr>
+            <th class="alinhamento_justificado" id="short">TELEFONE: </th>
+            <td><%= "#{@inscricao.telefone}" %></td>
+            <th class="alinhamento_justificado" id="short">CELULAR:</th>
+            <td ><%= "#{@inscricao.celular}" %></td>
+          </tr>
+          <tr>
+            <th class="alinhamento_justificado">E-MAIL</th>
+            <td colspan="3"><%=h @inscricao.email %></td>
+          </tr>
+          <tr>
+            <th colspan="3" class="alinhamento_justificado">EXERCE OUTRA FUNÇÃO NA PREFEITURA DE AMERICANA</th>
+            <td colspan="1"><%=h @inscricao.outra_funcao %></td>
+          </tr>
+          <tr>
+            <th class="alinhamento_justificado">GRADUAÇÃO</th>
+            <td><%=h @inscricao.graduacao %></td>
+            <th class="alinhamento_justificado">DISCIPLINA PRETENDIDA</th>
+            <td><%=h @inscricao.disciplina %></td>
+          </tr>
+          <tr>
+            <th class="alinhamento_justificado">HORARIO DISPONÍVEL</th>
+            <td colspan="3"><%=h @inscricao.horario %></td>
+          </tr>
+          <tr>
+            <td colspan="4">
+              <b>IMPORTANTE ANEXAR A ESTA FICHA</b><br/>
+              <ul>
+                <li>CÓPIA DE DIPLOMA(S) DA(S) FACULDADESDE(S) E OU MAGISTÉRIO</li>
+                <li>CÓPIA DOS DOCUMENTOS
+                  <ul>
+                    <li>RG</li>
+                    <li>CPF</li>
+                    <li>PIS</li>
+                    <li>COMPROVANTE ENDEREÇO</li>
+                    <li>CONTA/AGÊNCIA DO BANCO</li>
+                  </ul>
+                </li>
+                <li>CERTIFICAÇÕES DE CURSOS - MÍNIMO 4H - DOS ULTIMOS 5 ANOS</li>
+              </ul>
+              <b>OBS: SOMENTE ACEITAREMOS INSCRICAO PARA PROFESSORES QUE JÁ CONCLUÍRAM O CURSO.</b>
+            </td>
+          </tr>
