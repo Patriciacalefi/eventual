@@ -13,7 +13,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resource :about
   map.resource :session
   map.sobre '/sobre', :controller => 'abouts'
-  map.resources :formularios, :collection => {:cancelados => :get, :classificacao => :get, :impressao => :get,:listagem_por_curso => :get, :naoautorizado => :get, :nota => :get , :apuracao_nota => :get, :listar_nota => :get, :listar_nota_curso => :get, :classificacao_curso => :get, :sem_documentos => :get, :completa => :get}
+  map.resources :formularios, :collection => {:cancelados => :get, :classificacao => :get, :impressao => :get,:listagem_por_curso => :get, :naoautorizado => :get, :nota => :get , :apuracao_nota => :get, :listar_nota => :get, :listar_nota_curso => :get, :classificacao_curso => :get, :sem_documentos => :get, :completa => :get, :edital => :get}
   map.email_geral '/email_geral', :controller => 'homes', :action => "email_geral"
   map.busca_cpf '/busca_cpf', :controller => 'homes', :action => "busca_cpf"
   map.status '/status_inscricao', :controller => 'formularios', :action => 'ativo'
@@ -52,6 +52,8 @@ ActionController::Routing::Routes.draw do |map|
   # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
    map.root :controller => "homes"
    map.buscar '/buscar', :controller => 'homes', :action => 'buscar'
+   map.edital '/edital', :controller => 'formularios', :action => 'edital'
+
   # See how all your routes lay out with "rake routes"
    map.anexo '/download', :controller => 'homes', :action => 'edital'
    map.listagem '/listagem', :controller => 'apuracaos', :action => 'listagem'

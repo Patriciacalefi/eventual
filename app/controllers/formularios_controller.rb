@@ -217,4 +217,7 @@ class FormulariosController < ApplicationController
     end
   end
 
+def edital
+   render 'edital'
+end
 end
