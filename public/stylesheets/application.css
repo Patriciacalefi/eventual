@@ -40,7 +40,7 @@ a {
   border: solid 1px black;
   margin-top: 20px;
   text-align: center;
-  background-image: url("/images/logo_default3.jpg");
+  background-image: url("/images/logo_default1.jpg");
   background-repeat: inherit
 }
 #rodape {
@@ -75,7 +75,7 @@ a {
 #posicao{
     position: absolute;
     top: 108px;
-    left: 120px;
+    left: 180px;
     text-align: center;
 }
 #gerencia {
