@@ -53,7 +53,7 @@ ActionController::Routing::Routes.draw do |map|
    map.root :controller => "homes"
    map.buscar '/buscar', :controller => 'homes', :action => 'buscar'
    map.edital '/edital', :controller => 'formularios', :action => 'edital'
-
+   map.download_edital '/download', :controller => 'formularios', :action => 'download_edital'
   # See how all your routes lay out with "rake routes"
    map.anexo '/download', :controller => 'homes', :action => 'edital'
    map.listagem '/listagem', :controller => 'apuracaos', :action => 'listagem'

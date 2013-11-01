@@ -81,7 +81,7 @@
             one: "{{model}} não pôde ser salvo 1 erro"
             other: "{{model}} não pôde ser salvo {{count}} erros."
 
-          body: "INSCRIÇÃO NÃO PODE SER VALIDADA POR CONTER ERRO(S)  Verifique condições da inscrição e os dados digitados"
+          body: "INSCRIÇÃO NÃO PODE SER VALIDADA POR CONTER ERRO(S)....      => NÃO PODE HAVER DUAS INSCRIÇÕES COM O MESMO CPF  .... => Verificar dados digitados, campos com * são obrigatórios"
 
         messages:
           inclusion: "não está incluso na lista"

@@ -16,7 +16,7 @@
           <%if $opcao == 'EDUCAÇÃO FÍSICA'%>
             <%= collection_select  :formulario, :disciplina_id, @disciplinas5, :id, :disciplina, :include_blank => ' --- Selecione  ---'  %>
           <%else%>
-            <%if $opcao == 'HISTORIA'%>
+            <%if $opcao == 'HISTÓRIA'%>
               <%= collection_select  :formulario, :disciplina_id, @disciplinas6, :id, :disciplina, :include_blank => ' --- Selecione  ---'  %>
             <%else%>
               <%if $opcao == 'GEOGRAFIA'%>

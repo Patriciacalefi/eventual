@@ -1,7 +1,7 @@
 
  <table width="100%"class="tabelas">
     <tr>
-    <th colspan="2" align="left"><font  size=4 color="black"> <b>Ficha de Inscrição de Professores Enventuais</b></font> - <font  size=3 color="black"> <b>Secretaria da Educação</b></font></th>
+    <th colspan="2" align="left"><font  size=4 color="black"> <b>Ficha de Inscrição de Professores Eventuais</b></font> - <font  size=3 color="black"> <b>Secretaria da Educação</b></font></th>
     <th>    <%= link_to image_tag("/images/excluir.png", :size => "20x20"),  root_path, {:method => "get"}, :title => "Fechar"%></th>
   </tr>
   </table >
@@ -23,7 +23,7 @@
     </tr>
     <tr>
       <td><b>Pontuação Prova: </b><%= f.text_field :nota_prova, :size=>'5' %></td>
-      <td><b>Pontuação Titulos: </b><%= f.text_field :n_pontos, :size=>'5'%></td>
+      <td><b>Pontuação Títulos: </b><%= f.text_field :n_pontos, :size=>'5'%></td>
    </tr>
     <tr><td colspan="2"><%= f.submit "Salvar" %></td></tr>
   <% end %>

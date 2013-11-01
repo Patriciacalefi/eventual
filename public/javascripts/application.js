@@ -51,9 +51,7 @@ $(document).ready(function(){
 				$("#search","search_cpf").keypress(verificaNumero);
 			});
 
-    $('#formulario_rg').keyup(function(){
-        mascara(this,"##.###.###-#")
-    })
+ 
     $('#search_cpf').keyup(function(){
         mascara(this,"###.###.###-##")
     })

@@ -29,7 +29,7 @@ class FormulariosController < ApplicationController
       @disciplinas5 = Disciplina.find(:all, :conditions => ['opcao=?','EDUCAÇÃO FÍSICA'])
   end
   def load_disciplinas6
-      @disciplinas6 = Disciplina.find(:all, :conditions => ['opcao=?','HISTORIA'])
+      @disciplinas6 = Disciplina.find(:all, :conditions => ['opcao=?','HISTÓRIA'])
   end
   def load_disciplinas7
       @disciplinas7 = Disciplina.find(:all, :conditions => ['opcao=?','GEOGRAFIA'])
@@ -220,4 +220,8 @@ class FormulariosController < ApplicationController
 def edital
    render 'edital'
 end
+
+def download_edital
+    send_file("#{RAILS_ROOT}/public/documentos/edital.doc" , :type=>"text/msword")
+  end
 end
