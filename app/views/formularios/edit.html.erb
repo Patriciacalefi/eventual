@@ -23,6 +23,12 @@
       <%end%>
     <%end%>
   <tr>
+    <td colspan="3">
+      <center> <font color ="Red" size ="3"> * É OBRIGATÓRIO O PREENCHIMENTO DE TODOS OS CAMPOS </center></font>
+    </td>
+  </tr>
+
+  <tr>
       <td><font color ="Red" size ="3"><b>*</b></font><%= f.label :nome,"Nome: " %><br/>
           <%= f.text_field :nome, :size => 30%>
       </td>
@@ -36,7 +42,7 @@
           <%= f.text_field :endereco, :size => 30 %></td>
       <td><font color ="Red" size ="3">*</font><%= f.label :numero, "Nº: " %>
            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-          <font color ="Red" size ="3">*</font><%= f.label :cep,"Cep:" %><br/>
+          <font color ="Red" size ="3">*</font><%= f.label :cep,"Cep:"%> xx<b>.</b>xxx<b>-</b>xxx<br/>
           <%= f.text_field :numero, :size => 1 %>
           &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
           <%= f.text_field :cep, :size => 5 %></td>
@@ -57,15 +63,15 @@
       </td>
     </tr>
     <tr>
-      <td><font color ="Red" size ="3">*</font><%= f.label :telefone, "Fone:" %>
-        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-        <font color ="Red" size ="3">*</font><%= f.label :celular, "Celular:" %><br/>
-        <%= f.text_field :telefone, :size => 10 %>
-        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-        <%= f.text_field :celular, :size => 10 %>
+      <td><font color ="Red" size ="3">*</font><%= f.label :telefone, "Fone:" %> &nbsp xxx<b>-</b>xxxx
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <font color ="Red" size ="3">*</font><%= f.label :celular, "Celular:" %> &nbsp xxxx<b>-</b>xxxx<br/>
+        <%= f.text_field :telefone, :size => 12 %>
+        &nbsp
+        <%= f.text_field :celular, :size => 12 %>
       </td>
-      <td><font color ="Red" size ="3">*</font><%= f.label :cpf, "CPF: " %>
-         &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      <td><font color ="Red" size ="3">*</font><%= f.label :cpf, "CPF: " %><font size ="1"><b>(Digitar pausadamente)</b></font>
+         &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
          <font color ="Red" size ="3">*</font><%= f.label :rg,"RG: " %><br/>
          <%= f.text_field :cpf, :size => 10 %>
          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
@@ -74,14 +80,14 @@
     </tr>
     <tr>
 
-      <td><font color ="Red" size ="3">*</font><%= f.label :pis, "PIS/PASEP: " %><br/>
-        <%= f.text_field :pis, :size => 10 %>
+      <td><font color ="Red" size ="3">*</font><%= f.label :pis, "PIS/PASEP: " %><font size ="1"><b>(Digitar pausadamente)</b><br/>
+        <%= f.text_field :pis, :size => 15 %>
       </td>
       <td><font color ="Red" size ="3">*</font><%= f.label :n_filhos, "Nº Filhos:" %>
         &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
         <font color ="Red" size ="3">*</font><%= f.label :estado_civil, "Estado Civil:" %><br/>
-        <%= f.text_field :n_filhos, :size => 10 %>
-        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <%= f.text_field :n_filhos, :size => 1 %>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
         <%= f.select :estado_civil,Formulario::ESTADO_CIVIL %>
 
       </td>
@@ -131,3 +137,6 @@
     <tr><td colspan="2"><%= f.submit "Salvar" %></td></tr>
   <% end %>
 </table>
+
+
+
