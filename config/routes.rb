@@ -13,7 +13,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resource :about
   map.resource :session
   map.sobre '/sobre', :controller => 'abouts'
-  map.resources :formularios, :collection => {:cancelados => :get, :classificacao => :get, :impressao => :get,:listagem_por_curso => :get, :naoautorizado => :get, :nota => :get , :apuracao_nota => :get, :listar_nota => :get, :listar_nota_curso => :get, :classificacao_curso => :get, :sem_documentos => :get, :completa => :get, :edital => :get}
+  map.resources :formularios, :collection => {:cancelados => :get, :classificacao => :get, :impressao => :get,:listagem_por_curso => :get, :naoautorizado => :get, :nota => :get , :apuracao_nota => :get, :listar_nota => :get, :listar_nota_curso => :get, :classificacao_curso => :get, :sem_documentos => :get, :completa => :get, :edital => :get, :iformulario => :get}
   map.email_geral '/email_geral', :controller => 'homes', :action => "email_geral"
   map.busca_cpf '/busca_cpf', :controller => 'homes', :action => "busca_cpf"
   map.status '/status_inscricao', :controller => 'formularios', :action => 'ativo'

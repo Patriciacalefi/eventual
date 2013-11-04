@@ -95,16 +95,23 @@
     <td><b>TOTAL:</b> <%=h @formulario.total %></td>
   </tr>
  <tr>
-   <td colspan="4">
-     <b>OBSERVAÇÃO:</b>
+   <td class="alinhamento_justificado"><b>OBSERVAÇÃO:</b></td>
+   <td colspan="3">
+       <%=h @formulario.obs %> -
         <% if @formulario.documentacao_entregue == true %>
           &nbsp&nbsp&nbsp&nbsp DOCUMENTAÇÃO ENTREGUE EM ORDEM        <%end%>
         <% if @formulario.ativo == true %>
           &nbsp&nbsp INSCRIÇÃO CANCELADA - INSCRIÇÃO CANCELADA - INSCRIÇÃO CANCELADA - INSCRIÇÃO CANCELADA
         <%end%>
-
-     <br/><br/><br/>     <br/><br/><br/>     <br/><br/><br/><br/><br/><br/>
    </td>
+  <tr/>
+  <tr>
+    <td>
+       <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    </td>
+  </tr>
+     
+
  </tr>
  <tr>
    <td colspan="3"></td>

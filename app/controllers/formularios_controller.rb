@@ -221,6 +221,23 @@ def edital
    render 'edital'
 end
 
+
+  def iformulario
+      if params[:search].blank?
+          @search = Formulario.search(params[:search])
+          @formularios = @search.all(:order => 'nome ASC')
+      else
+          @search = Formulario.search(params[:search])
+          @formularios = @search.all(:order => 'nome ASC')
+      end
+  end
+
+
+
+def iformulario_imp
+  @formulario = Formulario.find(params[:id])  end
+
+
 def download_edital
     send_file("#{RAILS_ROOT}/public/documentos/edital.doc" , :type=>"text/msword")
   end
