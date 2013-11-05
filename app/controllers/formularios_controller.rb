@@ -8,6 +8,8 @@ class FormulariosController < ApplicationController
   before_filter :load_disciplinas6
   before_filter :load_disciplinas7
   before_filter :load_disciplinas8
+  before_filter :load_disciplinas9
+  before_filter :load_disciplinas10
   before_filter :load_disciplinas
 
   def load_disciplinas
@@ -37,8 +39,11 @@ class FormulariosController < ApplicationController
   def load_disciplinas8
       @disciplinas8 = Disciplina.find(:all, :conditions => ['opcao=?','LETRAS'])
   end
-  def load_disciplinas8
+  def load_disciplinas9
       @disciplinas9 = Disciplina.find(:all, :conditions => ['opcao=?','MATEMÁTICA'])
+  end
+  def load_disciplinas10
+      @disciplinas10 = Disciplina.find(:all, :conditions => ['opcao=?','CIÊNCIAS'])
   end
  def classificacao
 #    if params[:search][:curso_equals] == "TODOS"

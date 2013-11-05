@@ -28,11 +28,12 @@
                   <%if $opcao == 'MATEMÁTICA'%>
                     <%= collection_select  :formulario, :disciplina_id, @disciplinas9, :id, :disciplina, :include_blank => ' --- Selecione  ---'  %>
                   <%else%>
+                    <%if $opcao == 'CIÊNCIAS'%>
+                      <%= collection_select  :formulario, :disciplina_id, @disciplinas10, :id, :disciplina, :include_blank => ' --- Selecione  ---'  %>
+                    <%else%>
 
+                    <%end%>
                   <%end%>
-
-
-
                 <%end%>
               <%end%>
             <%end%>
