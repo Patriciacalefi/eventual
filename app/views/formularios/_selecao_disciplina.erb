@@ -25,6 +25,13 @@
                 <%if $opcao == 'LETRAS'%>
                   <%= collection_select  :formulario, :disciplina_id, @disciplinas8, :id, :disciplina, :include_blank => ' --- Selecione  ---'  %>
                 <%else%>
+                  <%if $opcao == 'MATEMÁTICA'%>
+                    <%= collection_select  :formulario, :disciplina_id, @disciplinas9, :id, :disciplina, :include_blank => ' --- Selecione  ---'  %>
+                  <%else%>
+
+                  <%end%>
+
+
 
                 <%end%>
               <%end%>

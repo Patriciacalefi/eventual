@@ -37,7 +37,9 @@ class FormulariosController < ApplicationController
   def load_disciplinas8
       @disciplinas8 = Disciplina.find(:all, :conditions => ['opcao=?','LETRAS'])
   end
-
+  def load_disciplinas8
+      @disciplinas9 = Disciplina.find(:all, :conditions => ['opcao=?','MATEMÁTICA'])
+  end
  def classificacao
 #    if params[:search][:curso_equals] == "TODOS"
 #      @search = Apuracao.search(:all)
