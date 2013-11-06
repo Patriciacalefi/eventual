@@ -81,7 +81,7 @@
             one: "{{model}} não pôde ser salvo 1 erro"
             other: "{{model}} não pôde ser salvo {{count}} erros."
 
-          body: "INSCRIÇÃO NÃO PODE SER VALIDADA POR CONTER ERRO(S)....      => NÃO PODE HAVER DUAS INSCRIÇÕES COM O MESMO CPF  .... => Verificar dados digitados, campos com * são obrigatórios"
+          body: "INSCRIÇÃO NÃO PODE SER VALIDADA POR CONTER ERRO(S).... => VERIFICAR SE OS DADOS DIGITADOS ESTÃO CORRETOS ....... => OS CAMPOS COM * SÃO DE PREENCHIMENTO OBRIGATÓRIO. => NÂO PODEM FICAR CAMPOS EM BRANCO OU ERRADOS ....... => NÃO PODE HAVER DUAS INSCRIÇÕES COM O MESMO CPF  .... "
 
         messages:
           inclusion: "não está incluso na lista"

@@ -105,7 +105,7 @@ pt-BR:
         header: 
           one: "Não pôde ser salvo: 1 erro"
           other: "Não pôde ser salvo: {{count}} erros."
-        body: "INSCRIÇÃO NÃO PODE SER VALIDADA POR CONTER ERRO(S)  => NÃO PODE HAVER DUAS INSCRIÇÕES COM O MESMO CPF  => Verificar dados digitados, campos com * são obrigatórios"
+        body: "INSCRIÇÃO NÃO PODE SER VALIDADA POR CONTER ERRO(S)  => VERIFIQUE DADOS DIGITADO, CAMPOS COM * SÃO OBRIGATÓRIOS   => NÃO PODE HAVER DUAS INSCRIÇÕES COM O MESMO CPF  => VERIFIQUE DADOS DIGITADO, CAMPOS COM * SÃO OBRIGATÓRIOS"
       messages: 
         inclusion: "não está incluso na lista"
         exclusion: "não está disponível"
